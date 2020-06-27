@@ -1,0 +1,35 @@
+
+/// Bootstrap overrides.
+
+// $primary: $brand-color;
+
+// Use a light grey for the body background, assuming that we'll superimpose
+// white panels on it for textual content.
+$body-bg: #f8f9fa;
+
+// Reduce heading sizes.
+$h1-font-size: 2.5rem;
+$h2-font-size: 1.75rem;
+$h3-font-size: 1.5rem;
+$h4-font-size: 1.25rem;
+$h5-font-size: 1.10rem;
+$h6-font-size: 1rem;
+
+$navbar-nav-link-padding-x:         1rem;
+$navbar-toggler-padding-y:          0.25rem;
+$navbar-toggler-padding-x:          0.75rem;
+$navbar-toggler-border-radius:      0;
+
+$navbar-dark-color:                 rgba(white, 0.85);
+$navbar-dark-hover-color:           rgba(white, 0.95);
+$navbar-dark-active-color:          white;
+$navbar-dark-disabled-color:        rgba(white, 0.25);
+$navbar-dark-toggler-border-color:  transparent;
+
+// Remove rounded edges from buttons.
+$btn-border-radius: 0;
+$btn-border-radius-lg: 0;
+$btn-border-radius-sm: 0;
+
+// Make blockquote text as large as regular text.
+$blockquote-font-size: 1rem;

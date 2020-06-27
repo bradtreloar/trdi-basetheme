@@ -1,0 +1,13 @@
+{#
+/**
+ * @file
+ * Theme override for the frontpage view.
+ */
+#}
+<div class="container">
+  {% if rows %}
+    {{ rows }}
+  {% elseif empty %}
+    {{ empty }}
+  {% endif %}
+</div>

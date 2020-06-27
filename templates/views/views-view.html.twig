@@ -1,0 +1,85 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ */
+#}
+<div{{ attributes.addClass("view") }}>
+
+  {% if title or header %}
+    <header>
+
+    {{ title_prefix }}
+    {% if title %}
+      <div class="title-bar">
+        <h2>
+          {{ title }}
+        </h2>
+      </div>
+    {% endif %}
+    {{ title_suffix }}
+
+    {% if header %}
+      <div class="view-header">
+        {{ header }}
+      </div>
+    {% endif %}
+
+    </header>
+  {% endif %}
+
+  {% if exposed %}
+    <div class="view-exposed">
+      {{ exposed }}
+    </div>
+  {% endif %}
+
+  {% if attachment_before %}
+    <div class="view-attachment">
+      {{ attachment_before }}
+    </div>
+  {% endif %}
+
+  <div class="view-body">
+    {% if rows %}
+      {{ rows }}
+    {% elseif empty %}
+      {{ empty }}
+    {% endif %}
+  </div>
+
+  {% if pager %}
+    {{ pager }}
+  {% endif %}
+
+  {% if attachment_after %}
+    <div class="view-attachment">
+      {{ attachment_after }}
+    </div>
+  {% endif %}
+
+  {#
+  {% if more %}
+    <div class="view-more">
+      {{ more }}
+    </div>
+  {% endif %}
+  #}
+
+  {% if footer %}
+    <div class="view-footer">
+      {{ footer }}
+    </div>
+  {% endif %}
+
+  {#
+  {% if feed_icons %}
+    <div class="row">
+      <div>
+        {{ feed_icons }}
+      </div>
+    </div>
+  {% endif %}
+  #}
+
+</div>

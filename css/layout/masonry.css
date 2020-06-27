@@ -1,0 +1,17 @@
+.masonry {
+  list-style: none;
+  padding: 0 15px;
+  -webkit-columns: 1;
+  -moz-columns: 1;
+  columns: 1;
+  -webkit-column-gap: 30px;
+  -moz-column-gap: 30px;
+  column-gap: 30px; }
+  .masonry div {
+    display: inline-block;
+    width: 100%; }
+  @media (min-width: 768px) {
+    .masonry {
+      -webkit-columns: 2;
+      -moz-columns: 2;
+      columns: 2; } }

@@ -1,0 +1,17 @@
+{% extends "block.html.twig" %}
+{#
+/**
+ * @file
+ * Theme override to display a call-to-action block.
+ */
+#}
+{% block content %}
+	<div class="container text-center">
+		<div class="jumbotron">
+      {{ content|without('field_link') }}
+			<div class="mt-4">
+				{{ content.field_link }}
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ *
+ */
+#}
+<div class="card my-3">
+
+  <a class="d-block" href="{{ url }}" rel="bookmark">
+    <img class="d-block w-100 h-auto" src="{{ image_url }}" alt="{{ label }}" />
+  </a>
+
+  <div class="card-body">
+    <h3 class="mb-3">
+      <a style="color:inherit" href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h3>
+    <a class="btn btn-primary" href="{{ url }}">See More</a>
+  </div>
+
+</div>

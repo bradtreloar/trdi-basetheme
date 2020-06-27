@@ -1,0 +1,88 @@
+@import 'global';
+
+// Top-level blocks are treated as containers.
+.article .content > div[property="schema:text"] {
+  > *:not(.alignfull) {
+    @include make-container();
+    @include make-container-max-widths();
+  }
+
+  // Remove the side padding because the columns block's children provide
+  // their own.
+  > .wp-block-columns {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+
+.wp-block-columns {
+  @include make-row;
+
+  // Do not arrange into row until medium breakpoint.
+  @include media-breakpoint-down(sm) {
+    display: block;
+  }
+}
+
+.wp-block-column {
+  // Do not arrange into columns until medium breakpoint.
+  @include media-breakpoint-up(md) {
+    @include make-col-ready;
+    /// Reproduce rules from .col-md
+    /// @see node_modules/bootstrap/scss/mixins/_grid-framework.scss
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+}
+
+// Image should be constrained by container's width and should maintain
+// it's aspect ratio.
+.wp-block-image {
+  img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+
+  figcaption {
+    margin-top: 15px;
+  }
+}
+
+// Responsive iframe.
+.wp-block-embed__wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.4%;
+  overflow: hidden;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Responsive padding on cover block.
+.wp-block-cover {
+  padding: $spacer !important;
+
+  @include media-breakpoint-up(sm) {
+    padding: $spacer * 1.5 !important;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: $spacer * 3 !important;
+  }
+
+  // Override Wordpress default style.
+  .wp-block-cover__inner-container {
+    width: auto;
+  }
+}

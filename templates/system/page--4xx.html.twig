@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Theme override to display a single page.
+ *
+ * @see template_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+<div class="page">
+
+{% if page.branding or page.navbar %}
+  {% block navbar %}
+  <div class="bg-light">
+    <div class="container px-0">
+      <div class="navbar navbar-light navbar-expand-lg">
+        {{ page.branding }}
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav" aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end text-right" id="navbar-nav">
+          {{ page.navbar }}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+{% endif %}
+
+{% block main %}
+<main role="main">
+  <a id="main-content" tabindex="-1"></a>
+  <div class="container">
+    {{ page.content }}
+  </div>
+</main>
+{% endblock %}
+
+{% if page.footer %}
+  {% block footer %}
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        {{ page.footer }}
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+{% endif %}
+
+</div>

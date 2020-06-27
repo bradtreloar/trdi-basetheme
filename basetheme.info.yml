@@ -1,0 +1,25 @@
+name: TRDI Basetheme
+type: theme
+description: A Bootstrap theme with Gutenberg support.
+core: 8.x
+
+base theme: stable
+
+libraries:
+  - basetheme/bootstrap
+  - basetheme/chocolat
+  - basetheme/global
+  - basetheme/gutenberg.blocks_view
+
+regions:
+  branding: Branding
+  navbar: Navbar
+  before_content: Before Content
+  content: Content
+  sidebar: Sidebar
+  footer_first: Footer (First)
+  footer_second: Footer (Second)
+  boilerplate: Boilerplate
+
+features:
+  - favicon

@@ -1,0 +1,36 @@
+
+bootstrap:
+  js:
+    vendor/bootstrap.min.js: { minified: true }
+    vendor/popper.min.js: { minified: true }
+  css:
+    base:
+      css/bootstrap.css: {}
+  dependencies:
+    - core/jquery
+
+chocolat:
+  js:
+    vendor/chocolat/js/chocolat.js: {}
+    js/chocolat.js: {}
+  css:
+    component:
+      vendor/chocolat/css/chocolat.css: {}
+  dependencies:
+    - core/drupal
+
+gutenberg.blocks_view:
+  css:
+    component:
+      css/components/wp-block.css: {}
+
+global:
+  css:
+    base:
+      css/base/base.css: {}
+      css/utilities/typography.css: {}
+    component:
+      css/components/buttons.css: {}
+    layout:
+      css/layout/grid.css: {}
+      css/layout/masonry.css: {}

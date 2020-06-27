@@ -1,0 +1,8 @@
+@import "global";
+
+// Add outline buttons with greater specificity for navbar.
+@each $color, $value in $theme-colors {
+  .navbar .navbar-nav .btn-outline-#{$color} {
+    @include button-outline-variant($value);
+  }
+}

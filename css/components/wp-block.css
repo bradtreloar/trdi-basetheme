@@ -1,0 +1,82 @@
+.article .content > div[property="schema:text"] > *:not(.alignfull) {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; }
+  @media (min-width: 576px) {
+    .article .content > div[property="schema:text"] > *:not(.alignfull) {
+      max-width: 540px; } }
+  @media (min-width: 768px) {
+    .article .content > div[property="schema:text"] > *:not(.alignfull) {
+      max-width: 720px; } }
+  @media (min-width: 992px) {
+    .article .content > div[property="schema:text"] > *:not(.alignfull) {
+      max-width: 960px; } }
+  @media (min-width: 1200px) {
+    .article .content > div[property="schema:text"] > *:not(.alignfull) {
+      max-width: 1140px; } }
+
+.article .content > div[property="schema:text"] > .wp-block-columns {
+  padding-left: 0;
+  padding-right: 0; }
+
+.wp-block-columns {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px; }
+  @media (max-width: 767.98px) {
+    .wp-block-columns {
+      display: block; } }
+
+@media (min-width: 768px) {
+  .wp-block-column {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    -webkit-flex-basis: 0;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%; } }
+
+.wp-block-image img {
+  display: block;
+  height: auto;
+  max-width: 100%; }
+
+.wp-block-image figcaption {
+  margin-top: 15px; }
+
+.wp-block-embed__wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.4%;
+  overflow: hidden; }
+  .wp-block-embed__wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+.wp-block-cover {
+  padding: 1rem !important; }
+  @media (min-width: 576px) {
+    .wp-block-cover {
+      padding: 1.5rem !important; } }
+  @media (min-width: 992px) {
+    .wp-block-cover {
+      padding: 3rem !important; } }
+  .wp-block-cover .wp-block-cover__inner-container {
+    width: auto; }

@@ -1,0 +1,16 @@
+@import "global";
+
+.masonry {
+  list-style: none;
+  padding: 0 $grid-gutter-width / 2;
+  columns: 1;
+  column-gap: $grid-gutter-width;
+  div {
+    display: inline-block;
+    width: 100%;
+  }
+
+  @include media-breakpoint-up(md) {
+    columns: 2;
+  }
+}

@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a branding block.
+ *
+ * @ingroup templates
+ */
+#}
+{% block content %}
+  {% if site_logo %}
+    <a class="navbar-brand" href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
+      <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" height="48" />
+    </a>
+  {% endif %}
+{% endblock %}

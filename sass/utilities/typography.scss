@@ -1,0 +1,20 @@
+@import 'global';
+
+.text-small {
+  font-size: $font-size-sm;
+}
+
+.text-normal {
+  font-size: $font-size-base;
+}
+
+.text-large {
+  font-size: $font-size-lg;
+}
+
+.goo {
+  display: inline;
+  box-decoration-break: clone;
+  padding: 0.5rem 1rem;
+  filter: url('#goo');
+}

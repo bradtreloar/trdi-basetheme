@@ -1,0 +1,4 @@
+theme-support:
+  disableCustomColors: true
+  disableCustomFontSizes: true
+  disableCodeEditing: true

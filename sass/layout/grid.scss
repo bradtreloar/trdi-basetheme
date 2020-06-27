@@ -1,0 +1,13 @@
+@import "global";
+
+// Remove list styling on list styled as grid.
+ol, ul {
+  &.row,
+  &.row > li {
+    list-style: none;
+  }
+
+  &.row {
+    padding-left: 0;
+  }
+}

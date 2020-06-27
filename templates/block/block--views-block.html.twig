@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ */
+#}
+<div{{attributes.addClass("block")}}>
+
+	{{ title_prefix }}
+	{% if label or more_link %}
+		<div class="container mt-5 mb-3 text-center">
+			{% if label %}
+				{% if more_link %}
+					<div class="row">
+						<div class="col-3 col-sm-2"></div>
+						<div class="col-6 col-sm-8">
+							<h2{{title_attributes}}>{{ label }}</h2>
+						</div>
+						<div class="col-3 col-sm-2">
+							{{ more_link }}
+						</div>
+					</div>
+					{% else %}
+          <h2{{title_attributes}}>{{ label }}</h2>
+				{% endif %}
+
+			{% endif %}
+		</div>
+	{% endif %}
+	{{ title_suffix }}
+
+	{% block content %}
+		{{ content }}
+	{% endblock %}
+</div>

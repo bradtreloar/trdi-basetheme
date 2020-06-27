@@ -1,0 +1,16 @@
+.text-small {
+  font-size: 0.875rem; }
+
+.text-normal {
+  font-size: 1rem; }
+
+.text-large {
+  font-size: 1.25rem; }
+
+.goo {
+  display: inline;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: 0.5rem 1rem;
+  -webkit-filter: url("#goo");
+  filter: url("#goo"); }

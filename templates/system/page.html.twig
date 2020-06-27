@@ -1,0 +1,99 @@
+{#
+/**
+ * @file
+ * Theme override to display a single page.
+ *
+ * @see template_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+<div class="page">
+
+	{% if page.above_topbar %}
+		<div class="above-topbar">
+			{{ page.above_topbar }}
+		</div>
+	{% endif %}
+
+	{% if page.branding or page.navbar %}
+		{% block navbar %}
+			<div class="bg-dark text-light">
+				<div class="container px-0">
+					<div class="navbar navbar-dark navbar-expand-lg">
+						{{ page.branding }}
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav" aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="pl-4 collapse navbar-collapse justify-content-end text-right" id="navbar-nav">
+							{{ page.navbar }}
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endblock %}
+	{% endif %}
+
+	{% block main %}
+		{{ page.before_content }}
+		{% if page.sidebar %}
+			<main role="main">
+				<a id="main-content" tabindex="-1"></a>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8">
+							{{ page.content }}
+						</div>
+						<div class="col-lg-4">
+							{{ page.sidebar }}
+						</div>
+					</div>
+				</div>
+			</main>
+		{% else %}
+			<main role="main">
+				<a id="main-content" tabindex="-1"></a>
+				{{ page.content }}
+			</main>
+		{% endif %}
+	{% endblock %}
+
+	{% if page.footer_first or page.footer_second %}
+		{% block footer %}
+			<div id="footer" class="bg-primary text-light pt-5 mt-5">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-5 mb-5">
+							{{ page.footer_first }}
+						</div>
+						<div class="col-md-7 mb-5">
+							{{ page.footer_second }}
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endblock %}
+	{% endif %}
+
+	{% if page.boilerplate %}
+		{% block boilerplate %}
+			<div id="boilerplate" class="bg-primary text-light text-small">
+				<div class="container pb-1">
+					<div class="d-md-flex justify-content-between">
+						<div class="d-sm-flex">
+							<a class="navbar-brand mb-2" href="/" title="Home" rel="home">
+								<img src="/themes/custom/basetheme/logo.svg" alt="Home" height="52">
+							</a>
+							{{ page.boilerplate }}
+						</div>
+						<div class="mb-2">
+							<a class="" href="https://hia.com.au/" title="HIA" target="_blank">
+								<img src="/themes/custom/basetheme/images/hia_member_reversed.svg" alt="HIA" height="63">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endblock %}
+	{% endif %}
+
+</div>

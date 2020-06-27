@@ -1,0 +1,69 @@
+{#
+/**
+ * @file
+ * Theme override for status messages.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_status_messages()
+ */
+#}
+{{ attach_library("basetheme/alert") }}
+{# Save original attribute classes. This is needed to override in loop below. #}
+{# @see https://www.drupal.org/project/bootstrap/issues/2892936 #}
+{% set classes = attributes.offsetGet('class')|default({}) %}
+{%
+  set status_heading = {
+    'status': 'Status message'|t,
+    'error': 'Error message'|t,
+    'warning': 'Warning message'|t,
+    'info': 'Informative message'|t,
+  }
+%}
+{%
+  set status_classes = {
+    'status': 'success',
+    'error': 'danger',
+    'warning': 'warning',
+    'info': 'info',
+  }
+%}
+{%
+  set status_roles = {
+    'status': 'status',
+    'error': 'alert',
+    'warning': 'alert',
+    'info': 'status',
+  }
+%}
+<div data-drupal-messages>
+  <div class="container my-3">
+  {% for type, messages in message_list %}
+    {%
+      set message_classes = [
+        'alert',
+        'alert-' ~ status_classes[type],
+        'alert-dismissible',
+      ]
+    %}
+    {# Reset the attribute classes and then add the message specific classes. #}
+    <div{{ attributes.setAttribute('class', classes).addClass(message_classes).setAttribute('role', status_roles[type]).setAttribute('aria-label', status_headings[type]) }}>
+      {% if status_headings[type] %}
+        <h2 class="sr-only">{{ status_headings[type] }}</h2>
+      {% endif %}
+      {% if messages|length > 1 %}
+        <ul class="item-list item-list--messages">
+          {% for message in messages %}
+            <li class="item item--message">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        {{ messages|first }}
+      {% endif %}
+      <button class="close" type="button" role="button" data-dismiss="alert" aria-label="{{ 'Close'|t }}">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  {% endfor %}
+  </div>
+</div>
